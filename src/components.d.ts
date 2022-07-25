@@ -20,6 +20,8 @@ declare module '@vue/runtime-core' {
     IconDetail: typeof import('./components/IconDetail.vue')['default']
     Icons: typeof import('./components/Icons.vue')['default']
     IconSet: typeof import('./components/IconSet.vue')['default']
+    Logo: typeof import('./components/Logo.vue')['default']
+    LogoIcons: typeof import('./components/LogoIcons.vue')['default']
     Modal: typeof import('./components/Modal.vue')['default']
     ModalDialog: typeof import('./components/ModalDialog.vue')['default']
     Navbar: typeof import('./components/Navbar.vue')['default']

@@ -11,10 +11,7 @@ withDefaults(
     :class="value ? '' : 'pointer-events-none overflow-hidden'"
   >
     <div
-      class="
-        px-4 py-1 rounded bg-white inline-block m-3 transition-all duration-300 text-primary border
-        dark:bg-dark-100 dark:border-dark-300
-      "
+      class="px-24px py-10px rounded inline-block bg-pseudoblack border-pseudoblack text-white m-24px transition-all duration-300 border rounded-12px"
       :style="value ? {} : { transform: 'translateY(-150%)' }"
       :class="value ? 'shadow' : 'shadow-none'"
     >

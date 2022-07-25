@@ -1,28 +1,37 @@
 body {
   padding: 0;
+  font-family: Relative,sans-serif;
 }
-
+::selection {color: #fff; background: #000;}
 .bg {
-  background: white;
+  background: #F1F0EE;
 }
-
-html.dark,
-html.dark .bg {
-  background: #222;
+.bg-grey {
+  background: #E4E2DF;
+}
+.bg-pseudoblack {
+  background: #161616;
+}
+.text-pseudoblack {
+  color: #161616;
+}
+.border-pseudoblack {
+  border-color: #161616 !important;
+}
+.shadow-custom {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
 }
 
 .btn {
-  @apply 
-    border border-gray-200 rounded shadow-sm outline-none
-    bg-white px-4 py-1 text-gray-600 text-sm transition-all
-    hover:(bg-gray-50 shadow)
-    dark:(border-dark-200 text-gray-300 bg-dark-100)
-    dark:hover:(border-primary bg-dark-100 text-primary)
+  @apply
+    border border-gray-900 rounded-6px outline-none font-500
+     px-4 py-1 text-14px transition-all
+    hover:(shadow-md drop-shadow-md)
     focus:(shadow outline-none);
 }
 
 .btn.small {
-  @apply px-2 py-1 text-sm;
+  @apply px-12px py-1 text-sm;
 }
 
 .dragging {
@@ -111,16 +120,28 @@ html.dark .bg {
   }
 }
 
-/* fallback black svg in dark mode */
-.icons-item svg,
-.dark .icons-item [fill="#000"],
-.dark .icons-item [fill="#000000"],
-.dark .icons-item [fill="black"] {
+.icons-item svg {
   fill: currentColor;
 }
 
-.dark .icons-item [stroke="#000"],
-.dark .icons-item [stroke="#000000"],
-.dark .icons-item [stroke="black"] {
-  stroke: currentColor;
+@font-face {
+  font-family: 'Relative';
+  src: url('@/fonts/Relative-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Relative';
+  src: url('@/fonts/Relative-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Relative';
+  src: url('@/fonts/Relative-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }

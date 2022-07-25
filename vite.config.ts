@@ -1,4 +1,4 @@
-import { join } from 'path'
+import { join, resolve } from 'path'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import PurgeIcons from 'vite-plugin-purge-icons'
@@ -11,6 +11,11 @@ import UnoCSS from 'unocss/vite'
 import fg from 'fast-glob'
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
+    },
+  },
   plugins: [
     Vue(),
     Pages({

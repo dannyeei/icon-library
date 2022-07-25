@@ -20,7 +20,8 @@ async function prepareJSON() {
   const dir = path.resolve(__dirname, '../node_modules/@iconify/json')
   const collectionsDir = path.resolve(__dirname, '../public/collections')
 
-  const raw = await fs.readJSON(path.join(dir, 'collections.json'))
+  // const raw = await fs.readJSON(path.join(dir, 'collections.json'))
+  const raw = await fs.readJSON(path.join(__dirname, 'collections.json'))
   await fs.ensureDir(collectionsDir)
 
   const collections = Object

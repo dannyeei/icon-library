@@ -8,10 +8,29 @@ export default defineComponent(() => ({
 </script>
 
 <template>
+  <div class="flex flex-row justify-between text-14px px-3 py-6px">
+    <a href="https://library.relume.io/" class="flex flex-row align-middle items-center font-500">
+      <div class="mx-2">
+        <svg width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 1.38123L2 5.80623L6 10.2312" stroke="#161616" stroke-width="1.5" />
+        </svg>
+      </div>
+      <div>Relume Library</div>
+    </a>
+    <div class="flex flex-row align-middle items-center text-12px font-500 opacity-50">
+      <div class="whitespace-nowrap">
+        Built in partnership with
+      </div>
+      <div class="ml2">
+        <Logo style="height: 17px" />
+      </div>
+    </div>
+  </div>
+
   <nav
-    class="dragging"
+    class="dragging bg-grey py-14px"
     flex="~ gap4 none"
-    p4 relative bg-base z-10 border="b base" text-xl
+    p4 relative z-10 text-xl
     :class="$route.path !== '/' ? 'md:hidden' : ''"
   >
     <!-- In Collections -->
@@ -32,19 +51,15 @@ export default defineComponent(() => ({
         to="/collection/all"
       />
       <div flex-auto />
-      <h1
-        absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center
-        text-xl font-light tracking-2px pointer-events-none
-      >
-        Icônes
-      </h1>
-      <a
+      <LogoIcons style="height: 28px" />
+      <div flex-auto />
+      <!-- <a
         class="non-dragging"
         i-carbon-logo-github icon-button flex-none
         href="https://github.com/antfu/icones"
         target="_blank"
       />
-      <DarkSwitcher flex-none />
+      <DarkSwitcher flex-none /> -->
     </template>
 
     <!-- Searching -->

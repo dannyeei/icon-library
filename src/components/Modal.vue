@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<{
 const positionClass = computed(() => {
   switch (props.direction) {
     case 'bottom':
-      return 'bottom-0 left-0 right-0 border-t'
+      return 'bottom-0 left-0 right-0 rounded-t-16px'
     case 'top':
       return 'top-0 left-0 right-0 border-b'
     case 'left':
@@ -42,14 +42,15 @@ const transform = computed(() => {
   <div
     fixed top-0 bottom-0 left-0 right-0 z-40
     :class="value ? '' : 'pointer-events-none'"
+    :style="value ? 'backdrop-filter: blur(3px);' : ''"
   >
     <div
-      bg-base bottom-0 left-0 right-0 top-0 absolute transition-opacity duration-500 ease-out
-      :class="value ? 'opacity-85' : 'opacity-0'"
+      bg-white bottom-0 left-0 right-0 top-0 absolute transition-opacity duration-500 ease-out
+      :class="value ? 'opacity-50' : 'opacity-0'"
       @click="$emit('close')"
     />
     <div
-      bg-base border-base absolute transition-all duration-200 ease-out
+      bg-white absolute transition-all duration-200 ease-out
       :class="positionClass"
       :style="value ? {} : { transform }"
     >

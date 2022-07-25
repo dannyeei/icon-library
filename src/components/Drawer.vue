@@ -15,11 +15,11 @@ const collections = computed(() => {
 </script>
 
 <template>
-  <div border="r base">
+  <div class="bg-grey">
     <NavPlaceholder class="mb-4" />
     <div
       v-if="!isElectron"
-      sticky top-0 bg-base z-1 border="b base"
+      sticky top-0 z-1
     >
       <button
         v-show="$route.path !== '/'"
@@ -34,14 +34,15 @@ const collections = computed(() => {
     <RouterLink
       v-for="collection in collections"
       :key="collection.id"
-      class="px-4 py-2 flex border-b border-gray-200 dark:border-dark-200"
+      class="px-4 py-2 flex"
       :to="`/collection/${collection.id}`"
+      active-class="bg"
     >
       <div
-        class="flex-auto py-1"
+        class="flex-auto py-1 "
         :class="collection.id === current ? 'text-primary' : ''"
       >
-        <div class="text-base leading-tight">
+        <div class="text-base leading-tight font-500">
           {{ collection.name }}
         </div>
         <div class="text-xs block opacity-50 mt-1">

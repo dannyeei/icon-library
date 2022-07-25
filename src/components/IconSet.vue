@@ -18,7 +18,7 @@ const onCopy = (status: boolean) => {
   copied.value = status
   setTimeout(() => {
     copied.value = false
-  }, 2000)
+  }, 200000)
 }
 
 const toggleCategory = (cat: string) => {
@@ -35,7 +35,7 @@ const namespace = computed(() =>
 
 const url = computed(() => collection.value?.url || collection.value?.author?.url)
 
-const onSelect = async (icon: string) => {
+const onSelect = async(icon: string) => {
   switch (activeMode.value) {
     case 'select':
       toggleBag(icon)
@@ -61,7 +61,7 @@ const loadMore = () => {
   maxMap.set(namespace.value, max.value)
 }
 
-const loadAll = async () => {
+const loadAll = async() => {
   if (!namespace.value)
     return
 
@@ -84,44 +84,44 @@ onMounted(() => {
 
 <template>
   <WithNavbar>
-    <div class="flex flex-auto h-full overflow-hidden ">
+    <div class="flex flex-auto h-full overflow-hidden">
       <Drawer class="h-full overflow-y-overlay flex-none hidden md:block" style="width:220px" />
       <div v-if="collection" class="py-5 h-full overflow-y-overlay flex-auto overflow-x-hidden relative">
         <!-- Loading -->
         <div
-          class="absolute top-0 left-0 right-0 bottom-0 bg-white bg-opacity-75 content-center transition-opacity duration-100 z-50 dark:bg-dark-100"
+          class="absolute top-0 left-0 right-0 bottom-0 bg bg-opacity-75 content-center transition-opacity duration-100 z-50"
           :class="loading ? '' : 'opacity-0 pointer-events-none'"
         >
-          <div class="absolute text-gray-800 dark:text-dark-500" style="top:50%;left:50%;transform:translate(-50%,-50%)">
+          <div class="absolute" style="top:50%;left:50%;transform:translate(-50%,-50%)">
             Loading...
           </div>
         </div>
 
-        <div class="flex px-8">
+        <div class="flex px-20px">
           <!-- Left -->
           <div class="flex-auto px-2">
             <NavPlaceholder class="md:hidden" />
 
-            <div class="text-gray-900 text-xl flex select-none dark:text-gray-200">
+            <div class="text-black text-20px flex select-none">
               <div class="whitespace-no-wrap overflow-hidden">
                 {{ collection.name }}
               </div>
-              <a
+              <!-- <a
                 v-if="url"
                 class="ml-1 mt-1 text-base opacity-25 hover:opacity-100"
                 :href="url"
                 target="_blank"
               >
                 <Icon icon="la:external-link-square-alt-solid" />
-              </a>
+              </a> -->
               <div class="flex-auto" />
             </div>
-            <div class="text-xs block opacity-50">
+            <div class="text-12px block opacity-65">
               {{ collection.author?.name }}
             </div>
             <div v-if="collection.license">
               <a
-                class="text-xs opacity-50 hover:opacity-100"
+                class="text-12px opacity-65 hover:opacity-100"
                 :href="collection.license.url"
                 target="_blank"
               >{{ collection.license.title }}</a>
@@ -154,18 +154,13 @@ onMounted(() => {
         </div>
 
         <!-- Searching -->
-        <div
-          class="
-            mx-8 my-2 hidden md:flex shadow rounded outline-none py-1 px-4
-            border border-transparent dark:border-dark-200
-          "
-        >
-          <Icon icon="carbon:search" class="m-auto flex-none opacity-60" />
+        <div class="mx-8 my-2 hidden md:flex shadow rounded-6px outline-none py-1 px-12px bg-white">
+          <Icon icon="ic:baseline-search" class="m-auto flex-none text-20px" />
           <form action="/collection/all" class="flex-auto" role="search" method="get" @submit.prevent>
             <input
               v-model="search"
               aria-label="Search"
-              class="text-base outline-none w-full py-1 px-4 m-0 bg-transparent"
+              class="text-16px font-400 outline-none w-full py-1 px-3 m-0 bg-transparent"
               name="s"
               placeholder="Search..."
             >
@@ -179,7 +174,7 @@ onMounted(() => {
           <Icons
             :icons="icons.slice(0, max)"
             :selected="bags"
-            :class="iconSize"
+            class="text-36px"
             :display="listType"
             :search="search"
             :namespace="namespace"
@@ -237,8 +232,9 @@ onMounted(() => {
         <SearchElectron />
 
         <Notification :value="copied">
-          <Icon icon="mdi:check" class="inline-block mr-2 font-xl align-middle" />
-          <span class="align-middle">Copied</span>
+          <!-- <Icon icon="mdi:check" class="inline-block mr-16px font-xl align-middle" /> -->
+          <img src="@/fonts/check.svg" class="inline-block mr-16px">
+          <span class="align-middle">Copied to clipboard!</span>
         </Notification>
       </div>
     </div>

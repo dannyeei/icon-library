@@ -22,7 +22,7 @@ defineProps({
 <template>
   <div
     class="icon-button m-auto"
-    :class="none ? '' : active ? 'opacity-100 hover:opacity-100' : 'opacity-25 hover:opacity-50'"
+    :class="none ? '' : active ? 'opacity-65 hover:opacity-100' : 'opacity-65 hover:opacity-100'"
   >
     <Icon
       :icon="icon"

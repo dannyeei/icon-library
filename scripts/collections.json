@@ -1,0 +1,112 @@
+{
+	"bx": {
+		"name": "BoxIcons",
+		"total": 797,
+		"version": "2.1.2",
+		"author": {
+			"name": "Atisa",
+			"url": "https://github.com/atisawd/boxicons"
+		},
+		"license": {
+			"title": "CC BY 4.0",
+			"spdx": "CC-BY-4.0",
+			"url": "https://creativecommons.org/licenses/by/4.0/"
+		},
+		"samples": [
+			"heart-circle",
+			"last-page",
+			"bar-chart-square"
+		],
+		"height": 24,
+		"category": "General",
+		"palette": false
+	},
+  "ic": {
+		"name": "Google Material Icons",
+		"total": 10760,
+		"version": "1.0.26",
+		"author": {
+			"name": "Material Design Authors",
+			"url": "https://github.com/material-icons/material-icons"
+		},
+		"license": {
+			"title": "Apache 2.0",
+			"spdx": "Apache-2.0",
+			"url": "https://github.com/material-icons/material-icons/blob/master/LICENSE"
+		},
+		"samples": [
+			"baseline-notifications-active",
+			"outline-person-outline",
+			"twotone-videocam-off"
+		],
+		"height": 24,
+		"category": "General",
+		"palette": false
+	},
+  "iconoir": {
+		"name": "Iconoir",
+		"total": 1049,
+		"version": "4.6.0",
+		"author": {
+			"name": "Luca Burgio",
+			"url": "https://github.com/lucaburgio/iconoir"
+		},
+		"license": {
+			"title": "MIT",
+			"spdx": "MIT",
+			"url": "https://github.com/lucaburgio/iconoir/blob/master/LICENSE"
+		},
+		"samples": [
+			"chat-bubble-check-1",
+			"edit",
+			"terminal-simple"
+		],
+		"height": 24,
+		"category": "General",
+		"palette": false
+	},
+	"carbon": {
+		"name": "Carbon",
+		"total": 1782,
+		"version": "11.1.0",
+		"author": {
+			"name": "IBM",
+			"url": "https://github.com/carbon-design-system/carbon/tree/main/packages/icons"
+		},
+		"license": {
+			"title": "Apache 2.0",
+			"spdx": "Apache-2.0"
+		},
+		"samples": [
+			"user-certification",
+			"humidity",
+			"edit-off"
+		],
+		"height": 32,
+		"displayHeight": 16,
+		"category": "General",
+		"palette": false
+	},
+  "tabler": {
+		"name": "Tabler Icons",
+		"total": 1807,
+		"version": "1.65.0",
+		"author": {
+			"name": "Paweł Kuna",
+			"url": "https://github.com/tabler/tabler-icons"
+		},
+		"license": {
+			"title": "MIT",
+			"spdx": "MIT",
+			"url": "https://github.com/tabler/tabler-icons/blob/master/LICENSE"
+		},
+		"samples": [
+			"alien",
+			"device-desktop",
+			"photo"
+		],
+		"height": 24,
+		"category": "General",
+		"palette": false
+	}
+}

@@ -21,7 +21,7 @@ const menu = ref(
       : 'small',
 )
 
-const packIconFont = async () => {
+const packIconFont = async() => {
   if (!props.collection)
     return
 
@@ -38,7 +38,7 @@ const packIconFont = async () => {
   inProgress.value = false
 }
 
-const packSvgs = async () => {
+const packSvgs = async() => {
   if (!props.collection)
     return
 
@@ -55,7 +55,7 @@ const packSvgs = async () => {
   inProgress.value = false
 }
 
-const cache = async () => {
+const cache = async() => {
   if (!props.collection)
     return
 
@@ -64,7 +64,7 @@ const cache = async () => {
 
 watch(
   menu,
-  async (current, prev) => {
+  async(current, prev) => {
     switch (current) {
       case 'small':
         iconSize.value = 'text-2xl'
@@ -110,26 +110,26 @@ const favorited = computed(() => isFavorited(props.collection.id))
 
 <template>
   <div flex="~ gap3" text-xl items-center>
-    <DarkSwitcher />
+    <!-- <DarkSwitcher /> -->
 
-    <button
+    <!-- <button
       v-if="collection.id !== 'all'"
       icon-button
       :class="favorited ? 'i-carbon:star-filled' : 'i-carbon:star'"
       title="Toggle Favorite"
       @click="toggleFavorite(collection.id)"
-    />
+    /> -->
 
     <!-- Download State -->
-    <div
+    <!-- <div
       v-if="installed && !isElectron"
       icon-button class="!op50"
       i-carbon-cloud-auditing
       title="Cached in browser"
-    />
+    /> -->
 
     <!-- Menu -->
-    <div icon-button cursor-pointer relative i-carbon-menu title="Menu">
+    <!-- <div icon-button cursor-pointer relative i-carbon-menu title="Menu">
       <select
         v-model="menu"
         absolute w-full dark:bg-dark-100 text-base top-0 right-0 opacity-0 z-10
@@ -152,14 +152,15 @@ const favorited = computed(() => isFavorited(props.collection.id))
           <option value="copy">
             Name copying mode
           </option>
-        </optgroup>
+        </optgroup> -->
 
-        <!--
+    <!--
             TODO: due to this function requires to download and pack
                   the full set, we should make some UI to aware users
                   in browser version.
           -->
-        <optgroup v-if="collection.id !== 'all'" label="Downloads">
+
+    <!-- <optgroup v-if="collection.id !== 'all'" label="Downloads">
           <option v-if="!isElectron && !installed" value="cache">
             Cache in Browser
           </option>
@@ -171,6 +172,9 @@ const favorited = computed(() => isFavorited(props.collection.id))
           </option>
         </optgroup>
       </select>
-    </div>
+    </div> -->
+    <button class="btn mx-1 my-3" @click="packSvgs">
+      Download All as SVG
+    </button>
   </div>
 </template>
