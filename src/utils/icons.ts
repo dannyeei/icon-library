@@ -28,10 +28,20 @@ export async function getSvgSymbol(icon: string, size = '1em', color = 'currentC
   return symbolElem?.outerHTML
 }
 
+export const iconVariants = [
+  { className: 'icon-embed-xxsmall', text: 'Icon XXSmall (16px)', size: '1rem' },
+  { className: 'icon-embed-xsmall', text: 'Icon XSmall (24px)', size: '1.5rem' },
+  { className: 'icon-embed-small', text: 'Icon Small (32px)', size: '2rem' },
+  { className: 'icon-embed-medium', text: 'Icon Medium (48px)', size: '3rem' },
+  { className: 'icon-embed-large', text: 'Icon Large (80px)', size: '5rem' },
+  { className: 'icon-embed-xlarge', text: 'Icon XLarge (104px)', size: '6.5rem' },
+]
+
 export async function getWebflowSvg(icon: string, className?: string) {
   const height = 'currentHeight'
   const width = 'currentWidth'
   const color = 'currentColor'
+
   if (!className)
     className = wfClassName.value
   const svgMarkup = Iconify.renderSVG(icon, { height, width })?.outerHTML

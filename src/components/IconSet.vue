@@ -18,7 +18,7 @@ const onCopy = (status: boolean) => {
   copied.value = status
   setTimeout(() => {
     copied.value = false
-  }, 200000)
+  }, 2000)
 }
 
 const toggleCategory = (cat: string) => {

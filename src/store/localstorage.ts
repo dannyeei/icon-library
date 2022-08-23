@@ -6,7 +6,7 @@ const RECENT_CAPACITY = 10
 export type ActiveMode = 'normal' | 'select' | 'copy'
 
 export const wfClassName = useStorage('wf-class-name', 'icon')
-export const relumeSize = useStorage('relume-size', '1em')
+export const relumeSize = useStorage('relume-size', '1rem')
 export const themeColor = useStorage('icones-theme-color', '#161616')
 export const iconSize = useStorage('icones-icon-size', '2xl')
 export const previewColor = useStorage('icones-preview-color', '#888888')

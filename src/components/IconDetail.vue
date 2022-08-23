@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import copyText from 'copy-text-to-clipboard'
-import { getIconSnippet, toComponentName } from '../utils/icons'
+import { getIconSnippet, iconVariants, toComponentName } from '../utils/icons'
 import { copyPreviewColor, previewColor, relumeSize, showCaseSelect, showHelp, wfClassName } from '../store'
 import { Download } from '../utils/pack'
 
@@ -67,15 +67,11 @@ const download = async(type: string) => {
 
   Download(blob, name)
 }
+const activeVariant = ref(iconVariants[0])
 
-const iconVariants = [
-  { className: 'icon-embed-xxsmall', text: 'Icon XXSmall (16px)', size: '1rem' },
-  { className: 'icon-embed-xsmall', text: 'Icon XSmall (24px)', size: '1.5rem' },
-  { className: 'icon-embed-small', text: 'Icon Small (32px)', size: '2rem' },
-  { className: 'icon-embed-medium', text: 'Icon Medium (48px)', size: '3rem' },
-  { className: 'icon-embed-large', text: 'Icon Large (80px)', size: '5rem' },
-  { className: 'icon-embed-xlarge', text: 'Icon XLarge (104px)', size: '6.5rem' },
-]
+watch(activeVariant, (value) => {
+  relumeSize.value = value.size
+})
 </script>
 
 <template>
@@ -104,8 +100,8 @@ const iconVariants = [
           :key="item.className"
           class="btn small mr-2 mb-1"
           :class="relumeSize === item.size ? '' : 'border-opacity-15 opacity-50'"
-          @click="relumeSize = item.size"
-          @sclick="copyJson('webflow-svg', item.className)"
+          @click="activeVariant = item"
+          @old-click="copyJson('webflow-svg', item.className)"
         >
           {{ item.text }}
         </button>
@@ -114,7 +110,7 @@ const iconVariants = [
       <div class="flex flex-wrap mt-2">
         <div class="mr-4">
           <!-- <div class="my-1 text-gray-500 text-sm">Copy to clipboard</div> -->
-          <button class="btn h-36px bg-pseudoblack text-white mr-2 mb-1 px-24px" @click="copyJson('webflow-svg')">
+          <button class="btn h-36px bg-pseudoblack text-white mr-2 mb-1 px-24px" @click="copyJson('webflow-svg', activeVariant.className)">
             Copy
           </button>
           <button class="btn border-pseudoblack text-pseudoblack h-36px mr-2 mb-1" @click="download('relume-svg')">
