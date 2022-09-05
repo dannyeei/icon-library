@@ -56,54 +56,83 @@ export async function getWebflowSvg(icon: string, className?: string) {
     case 'icon-embed-large': size = '5rem'; break
     case 'icon-embed-xlarge': size = '6.5rem'; break
   }
+
+  let n_id = null
+  switch (className) {
+      case 'icon-embed-xxsmall': n_id = '3fea695a-f02c-3b19-56a3-b64169d624f4'; break
+      case 'icon-embed-xsmall': n_id = '3fea695a-f02c-3b19-56a3-b64169d624fc'; break
+      case 'icon-embed-small': n_id = '3fea695a-f02c-3b19-56a3-b64169d62522'; break
+      case 'icon-embed-medium': n_id = '3fea695a-f02c-3b19-56a3-b64169d624ec'; break
+      case 'icon-embed-large': n_id = '6049af51-4e74-06b0-0171-1a89e622d0cf'; break
+      case 'icon-embed-xlarge': n_id = '3fea695a-f02c-3b19-56a3-b64169d62532'; break
+  }
   const styleLess = (size)
     ? `display: flex; width: ${size}; height: ${size}; flex-direction: column; justify-content: center; align-items: center;`
     : 'display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 0; flex-shrink: 0; flex-basis: auto;'
 
-  return JSON.stringify({
-    type: '@webflow/XscpData',
-    payload: {
-      nodes: [
-        {
-          _id: '47ed4056-0b7e-6915-4cd0-1410f3bc716f',
-          tag: 'div',
-          classes: ['34bb1f93-1107-f041-0b8d-7806d42f136a'],
-          children: [],
-          v: svgMarkup,
-          type: 'HtmlEmbed',
-          data: {
-            embed: {
-              type: 'html',
-              meta: {
-                html: svgMarkup,
-                div: false,
-                iframe: false,
-                script: false,
-                compilable: false,
-              },
-            },
-            insideRTE: false,
-          },
-        }],
-      styles: [
-        {
-          _id: '34bb1f93-1107-f041-0b8d-7806d42f136a',
-          fake: false,
-          type: 'class',
-          name: className,
-          namespace: '',
-          comb: '',
-          styleLess,
-          variants: {},
-          children: [],
-          selector: null,
-        }],
-      assets: [],
-      ix1: [],
-      ix2: { interactions: [], events: [], actionLists: [] },
-    },
-    meta: { unlinkedSymbolCount: 0, droppedLinks: 0, dynBindRemovedCount: 0, dynListBindRemovedCount: 0, paginationRemovedCount: 0 },
-  })
+    return JSON.stringify({
+        "type": "@webflow/XscpData",
+        "payload": {
+            "nodes": [{
+                "_id": "1c91ce44-2c7a-3f78-f8c5-44fb8213f27c",
+                "type": "HtmlEmbed",
+                "tag": "div",
+                "classes": [n_id],
+                "children": [],
+                v: svgMarkup,
+                "data": {
+                    "embed": {
+                        "type": "html",
+                        "meta": {
+                            html: svgMarkup,
+                            "div": false,
+                            "iframe": false,
+                            "script": false,
+                            "compilable": false
+                        }
+                    },
+                    "insideRTE": false,
+                    "attr": {
+                        "id": ""
+                    },
+                    "xattr": [],
+                    "search": {
+                        "exclude": false
+                    },
+                    "visibility": {
+                        "conditions": []
+                    }
+                }
+            }],
+            "styles": [{
+                "_id": n_id,
+                "fake": false,
+                "type": "class",
+                "name": className,
+                "namespace": "",
+                "comb": "",
+                styleLess,
+                "variants": {},
+                "children": [],
+                "createdBy": "6075409192d886a671499223",
+                "selector": null
+            }],
+            "assets": [],
+            "ix1": [],
+            "ix2": {
+                "interactions": [],
+                "events": [],
+                "actionLists": []
+            }
+        },
+        "meta": {
+            "unlinkedSymbolCount": 0,
+            "droppedLinks": 0,
+            "dynBindRemovedCount": 0,
+            "dynListBindRemovedCount": 0,
+            "paginationRemovedCount": 0
+        }
+    });
 }
 
 export function toComponentName(icon: string) {
