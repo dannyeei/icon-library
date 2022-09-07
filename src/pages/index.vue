@@ -100,7 +100,7 @@ watch(svgSource, () => {
           Copy and Paste icons into your Webflow projects.
         </div>
         <div class="mt-8px text-16px font-400 opacity-50">
-          All icons have been formatted for Webflow. <a class="underline" href="#YOUTUBE_LEARN_MORE">Learn more</a>
+          All icons have been formatted for Webflow. <a class="underline" target="_blank" href="https://www.loom.com/share/70668d4dfbe44ab090f6b947de9af621">Watch Demo</a>
           <!-- Learn more -->
         </div>
       </div>
@@ -129,7 +129,7 @@ watch(svgSource, () => {
             In 1 click, transform your SVG into a friendly format for Webflow development.
           </div>
           <div class="mb-32px opacity-50">
-            Not sure how it works? <a class="underline" href="#YOUTUBE_WATCH_TUTORIAL">Watch Tutorial</a>
+            Then copy and paste the code into a HTML embed in Webflow.
           </div>
         </div>
         <div class="flex flex-row text-16px font-500">

@@ -28,10 +28,12 @@ body {
      px-4 py-1 text-14px transition-all
     hover:(shadow-md drop-shadow-md)
     focus:(shadow outline-none);
+  --un-border-opacity: .15;
 }
 
 .btn.small {
   @apply px-12px py-1 text-sm;
+  --un-border-opacity: .15;
 }
 
 .dragging {
@@ -144,4 +146,132 @@ body {
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+.ri-footer-cta_component {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 680px;
+    margin: 32px auto;
+    padding: 12px 16px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #e4e2df
+}
+
+.ri-footer-cta_rl-symbol {
+    margin-right: 16px
+}
+
+.ri-footer-cta_text-wrapper {
+    margin-right: 16px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.ri-footer-cta_text-medium {
+    font-size: 14px;
+    font-weight: 500
+}
+
+.ri-footer-cta_text-small {
+    color: rgba(22, 22, 22, .65);
+    font-size: 13px;
+    font-weight: 400
+}
+
+.r-footer-cta_button {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 2.25rem;
+    min-height: 2.25rem;
+    padding: .5rem 1rem;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 8px;
+    background-color: transparent;
+    -webkit-transition: background-color .2s;
+    transition: background-color .2s;
+    color: #161616;
+    line-height: 1;
+    font-weight: 500;
+    text-decoration: none
+}
+
+.r-footer-cta_button:hover {
+    background-color: #e4e2df
+}
+
+.r-footer-cta_button.invert-colors {
+    color: #fff
+}
+
+.r-footer-cta_button.hover2:hover {
+    background-color: #d8d5d1
+}
+
+.r-footer-cta_button.hover2.remove-saved {
+    position: relative;
+    cursor: pointer
+}
+
+.r-footer-cta_button.button-red {
+    border-color: #df3434;
+    color: #df3434
+}
+
+.r-footer-cta_button.button-red:hover {
+    background-color: rgba(255, 72, 72, .05)
+}
+
+.r-footer-cta_button.notification-popup_skip-button {
+    margin-top: .5rem;
+    border-color: transparent;
+    color: rgba(22, 22, 22, .65)
+}
+
+.r-footer-cta_button.hover3:hover,
+.r-footer-cta_button.notification-popup_skip-button:hover {
+    background-color: #f1f0ee
+}
+
+.r-footer-cta_button.auto-height {
+    height: auto
+}
+
+.r-footer-cta_button.auto-height.hide {
+    display: none
+}
+
+.r-footer-cta_button.auto-height.hl-reset-all-components {
+    background-color: #f1f0ee
+}
+
+.r-footer-cta_button.upload-thumbnail {
+    width: 88px
+}
+
+.r-footer-cta_button.upload-thumbnail:hover {
+    background-color: #f1f0ee
+}
+
+.r-footer-cta_button.hl-new-folder-button.hide {
+    display: none
 }

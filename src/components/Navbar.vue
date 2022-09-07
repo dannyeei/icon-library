@@ -19,16 +19,19 @@ export default defineComponent(() => ({
     </a>
     <div class="flex flex-row align-middle items-center text-12px font-500 opacity-50">
       <div class="whitespace-nowrap">
-        Built in partnership with
+        Built by <a class="underline" href="https://www.relume.io/" target="_blank">Relume</a> in partnership with
       </div>
-      <div class="ml2">
-        <Logo style="height: 17px" />
-      </div>
+      <a href="https://www.flowgurus.co/" target="_blank">
+        <div class="ml2">
+          <Logo style="height: 17px" />
+        </div>
+      </a>
     </div>
   </div>
 
   <nav
     class="dragging bg-grey py-14px"
+    style="padding-right: 56px"
     flex="~ gap4 none"
     p4 relative z-10 text-xl
     :class="$route.path !== '/' ? 'md:hidden' : ''"
