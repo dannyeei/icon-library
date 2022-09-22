@@ -172,9 +172,10 @@ const favorited = computed(() => isFavorited(props.collection.id))
           </option>
         </optgroup>
       </select>
-    </div> -->
+    </div>
     <button class="btn mx-1 my-3" @click="packSvgs">
       Download All as SVG
     </button>
+    -->
   </div>
 </template>

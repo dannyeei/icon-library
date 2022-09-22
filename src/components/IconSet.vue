@@ -83,7 +83,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <WithNavbar>
     <div class="flex flex-auto h-full overflow-hidden">
       <Drawer class="h-full overflow-y-overlay flex-none hidden md:block" style="width:220px" />
       <div v-if="collection" class="py-5 h-full overflow-y-overlay flex-auto overflow-x-hidden relative">
@@ -238,5 +237,4 @@ onMounted(() => {
         </Notification>
       </div>
     </div>
-  </WithNavbar>
 </template>

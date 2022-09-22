@@ -18,11 +18,7 @@ import Logo from './Logo.vue'
       </a>
     </div>
 
-<div>
-
 <div class="ri-footer-cta_component"><img src="https://assets.website-files.com/6177739448baa66404ce1d9c/6317d6bd254e26b3250e9d9b_rl-symbol.svg" loading="lazy" alt="" class="ri-footer-cta_rl-symbol"><div class="ri-footer-cta_text-wrapper"><div class="ri-footer-cta_text-medium">Join 10,000+ Developers using Relume Library to build faster in Webflow</div><div class="ri-footer-cta_text-small">Access the world’s largest library of Webflow components</div></div><a href="https://library.relume.io/" target="_blank" class="r-footer-cta_button w-button">Try for free</a></div>
-</div>
-
 
     <!-- <p class="color-fade">
       built by
