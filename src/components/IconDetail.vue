@@ -108,14 +108,14 @@ watch(activeVariant, (value) => {
       </div>
 
       <div class="flex flex-wrap mt-2">
-        <div class="mr-4">
+        <div class="mr-4 flex">
           <!-- <div class="my-1 text-gray-500 text-sm">Copy to clipboard</div> -->
-          <button style="display:flex" class="btn h-36px bg-pseudoblack text-white mr-2 mb-1 px-24px" @click="copyJson('webflow-svg', activeVariant.className)">
-            <img alt="Webflow Icon" src="https://www.vectorlogo.zone/logos/webflow/webflow-icon.svg" style="height: 15px" class="m-1">
+          <button class="flex btn h-36px bg-pseudoblack text-white mr-2 mb-1 px-24px" @click="copyJson('webflow-svg', activeVariant.className)">
+            <img alt="Webflow Icon" src="https://www.vectorlogo.zone/logos/webflow/webflow-icon.svg" style="height: 15px" class="mr-1 my-1">
             Copy  
           </button>
-          <button style="display:flex" class="btn h-36px bg-pseudoblack text-white mr-2 mb-1 px-24px" @click="copy('relume-svg')">
-            <img alt="Figma Icon" src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" style="height: 15px" class="m-1">
+          <button class="flex btn h-36px bg-pseudoblack text-white mr-2 mb-1 px-24px" @click="copy('relume-svg')">
+            <img alt="Figma Icon" src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" style="height: 15px" class="mr-1 my-1">
             Copy 
           </button>
           <button class="btn border-pseudoblack text-pseudoblack h-36px mr-2 mb-1" @click="download('svg')">
