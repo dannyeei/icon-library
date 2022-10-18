@@ -6,8 +6,8 @@ import { HtmlToJSX } from './htmlToJsx'
 const API_ENTRY = 'https://api.iconify.design'
 
 export async function getSvg(icon: string, size: string | null = null, color = 'currentColor') {
-    const width = size == null ? 'currentWidth' : size
-    const height = size == null ? 'currentHeight' : size
+    const width = size == null ? '100%' : size
+    const height = size == null ? '100%' : size
     return Iconify.renderSVG(icon, { height, width })?.outerHTML?.replace('currentColor', color)
         || await fetch(`${API_ENTRY}/${icon}.svg?inline=false&height=${height}&width=${width}&color=${encodeURIComponent(color)}`).then(r => r.text()) || ''
 }
@@ -38,8 +38,8 @@ export const iconVariants = [
 ]
 
 export async function getWebflowSvg(icon: string, className?: string) {
-    const height = 'currentHeight'
-    const width = 'currentWidth'
+    const height = '100%'
+    const width = '100%'
     const color = 'currentColor'
 
     if (!className)

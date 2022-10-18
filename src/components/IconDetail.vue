@@ -110,13 +110,13 @@ watch(activeVariant, (value) => {
       <div class="flex flex-wrap mt-2">
         <div class="mr-4 flex">
           <!-- <div class="my-1 text-gray-500 text-sm">Copy to clipboard</div> -->
-          <button class="flex btn h-36px bg-pseudoblack text-white mr-2 mb-1 p-2" @click="copyJson('webflow-svg', activeVariant.className)">
+          <button class="flex btn h-36px bg-pseudoblack text-white mr-2 mb-1" style="padding:0.4rem" @click="copyJson('webflow-svg', activeVariant.className)">
             <img alt="Webflow Icon" src="@/webflow-icon.png" class="mr-2 h-20px">
             <div class="mx-2">
             Copy for Webflow
             </div>
           </button>
-          <button class="flex btn h-36px bg-pseudoblack text-white mr-2 mb-1 p-2" @click="copy('relume-svg')">
+          <button class="flex btn h-36px bg-pseudoblack text-white mr-2 mb-1" style="padding:0.4rem" @click="copy('relume-svg')">
             <img alt="Figma Icon" src="@/figma-icon.png" class="mr-2 h-20px">
             <div class="mx-2">
             Copy for Figma

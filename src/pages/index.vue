@@ -37,11 +37,14 @@ const processSvgContent = (text: string) => {
   const params = defaultSvgProcessingParams
   let result = text
   if (params.replaceWH) {
-    result = result.replaceAll(/(svg[^>]*width=\\?")[^\\?"]*(\\?")/gm, '$1currentWidth$2')
-    result = result.replaceAll(/(svg[^>]*height=\\?")[^\\?"]*(\\?")/gm, '$1currentHeight$2')
+    result = result.replaceAll(/(svg[^>]*width=\\?")[^\\?"]*(\\?")/gm, '$1 100%$2')
+    result = result.replaceAll(/(svg[^>]*height=\\?")[^\\?"]*(\\?")/gm, '$1 100%$2')
   }
-  if (params.replaceFill)
+  if (params.replaceFill) {
     result = result.replaceAll(/\sfill=\\?"((?!none).)(?:[^"\\])*\\?"/gm, ' fill="currentColor"')
+    result = result.replaceAll(/"fill:\\?((?!none).)(?:[^;\\])*\\?/gm, '"fill:currentColor')
+    result = result.replaceAll(/ fill:\\?((?!none).)(?:[^;\\])*\\?/gm, ' fill:currentColor')
+  }
   if (params.replaceStroke)
     result = result.replaceAll(/\sstroke=\\?"((?!none).)(?:[^"\\])*\\?"/gm, ' stroke="currentColor"')
   if (params.removeFillOpacity)
@@ -154,9 +157,11 @@ watch(svgSource, () => {
             />
             <div class="mx-12px -mt-80px">
               <div class="flex flex-row justify-between items-end w-full">
+              <!-- 
                 <div v-show="svgResult" class="h-64px pa-12px bg-white rounded-3 z-1">
-                  <div ref="svgResultPreviewNode" class="h-40px overflow-hidden" />
+                  <div ref="svgResultPreviewNode" class="h-40px overflow-hidden" /> 
                 </div>
+                -->
                 <div class="h-64px" />
                 <button
                   class="btn h-36px bg-pseudoblack text-white mr-1 mb-1"
